@@ -14,7 +14,7 @@ export class UiComponentService {
 	}
 
     public getCardsDataById ( id, success, error ): any {
-        const url = '/api/cards/' + id;
+        const url = '/api/cards?id=' + id;
 		this.get( url, success, error );
     }
 
