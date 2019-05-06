@@ -1,0 +1,47 @@
+<div id="ui-container">
+  <div class="toolbar-container">
+
+    <!-- TOOLBAR -->
+    <mat-toolbar class="toolbar">
+      <button mat-icon-button (click)="drawer.toggle()" class="button-toggle">
+          <img src="./../../assets/icons/avalith.png">
+      </button>
+    </mat-toolbar>
+  </div>
+  <div class="content-container">
+    <mat-drawer-container class="drawer-container" [hasBackdrop]="false">
+
+      <!-- SIDENAV -->
+      <mat-drawer #drawer [opened]="true" [mode]="'push'" class="sidenav-container">
+          <dev-component></dev-component>
+          <div *ngIf="pageToShow === 'dashboard'">
+              <search-component></search-component>
+              <filter-component (filterValue)="valueSelected($event)"></filter-component>
+          </div>
+      </mat-drawer>
+
+      <!-- CONTENT -->
+      <mat-drawer-content class="drawer-component">
+        <div *ngIf="pageToShow === 'dashboard'">
+          <h2> Languages & Technologies </h2>
+          <div class="flex-cards">
+            <div *ngFor="let card of cardsContent">
+              <mat-card class="card-content"
+                        [ngClass]="{'hidden-card': filterValue && filterValue !== card.cardTechnology[0]}">
+                <div class="card-image" (click)="switchToPost(card.cardId)">
+                  <img src="{{card.cardImageUrl}}">
+                </div>
+                <div class="card-description">{{card.cardDescription}}</div>
+              </mat-card>
+            </div>
+          </div>
+        </div>
+        
+        <div *ngIf="pageToShow === 'post'">
+          <button (click)="switchToDashboard()"> Back </button>
+          <post-component [cardId]="cardId"></post-component>
+        </div>  
+      </mat-drawer-content>
+    </mat-drawer-container>
+  </div>
+</div>

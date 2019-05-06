@@ -1,0 +1,11 @@
+<div id="filter-container">
+    <label class="label-filter">Filter by</label>
+    <mat-radio-group class="radio-group-container" [(ngModel)]="optionSelected">
+        <mat-radio-button class="radio-button-container"
+                         *ngFor="let option of options" 
+                         [value]="option"
+                         (click)="sendOption(option)">
+        {{option}}
+        </mat-radio-button>
+    </mat-radio-group>
+</div>

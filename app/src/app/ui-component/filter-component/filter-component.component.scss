@@ -1,0 +1,12 @@
+#filter-container{
+    padding: 30px;
+    .radio-group-container{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-top: 30px;
+    }
+    .radio-button-container{
+        margin-bottom: 15px;
+    }
+}
