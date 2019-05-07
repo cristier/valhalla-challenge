@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import * as Highcharts from 'highcharts';
 
 @Injectable()
 
@@ -27,5 +28,9 @@ export class UiComponentService {
 				error( err );
 			}
 		);
+	}
+
+	public drawChart( element, options ) {
+		Highcharts.chart(element, options);
 	}
 }

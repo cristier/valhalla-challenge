@@ -37,8 +37,8 @@
           </div>
         </div>
         
-        <div *ngIf="pageToShow === 'post'">
-          <button (click)="switchToDashboard()"> Back </button>
+        <div *ngIf="pageToShow === 'post'" class="post-component">
+          <button (click)="switchToDashboard()" class="back-button"> Go back </button>
           <post-component [cardId]="cardId"></post-component>
         </div>  
       </mat-drawer-content>

@@ -6,13 +6,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatToolbarModule, MatIconModule, MatButtonModule, 
          MatSidenavModule, MatCardModule, MatInputModule,
          MatRadioModule } from '@angular/material';
+import { ChartModule } from 'angular-highcharts';
 
 // Components
+import { UiComponent } from './ui-component.component';
 import { DevComponent } from './dev-component/dev-component.component';
 import { SearchComponent } from './search-component/search-component.component';
 import { FilterComponent } from './filter-component/filter-component.component';
 import { PostComponent } from './post-component/post-component.component';
-import { UiComponent } from './ui-component.component';
+import { GraphComponent } from './graph-component/graph-component.component';
 
 //Services
 import { UiComponentService } from './ui-component.service'
@@ -24,6 +26,7 @@ import { UiComponentService } from './ui-component.service'
     SearchComponent,
     FilterComponent,
     PostComponent,
+    GraphComponent
   ],
   imports: [
     BrowserModule,
@@ -36,6 +39,7 @@ import { UiComponentService } from './ui-component.service'
     MatInputModule,
     MatRadioModule,
     HttpClientModule,
+    ChartModule
   ],
   exports: [
     UiComponent

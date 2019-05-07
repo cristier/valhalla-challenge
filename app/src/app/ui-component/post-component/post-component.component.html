@@ -1,8 +1,15 @@
 <div id="post-container" class="container">
     <div class="content-container">
-        <div class="image-container row">IMAGE</div>
+        <div class="image-container row">
+            <img src="{{contentToShow.image}}">
+        </div>
         <div class="content-card row">
-            {{content}}
+            <div class="description-container">
+                {{contentToShow.description}}
+            </div>
+            <div class="graph-container">
+                <graph-component></graph-component>
+            </div>
         </div>
     </div>
 </div>

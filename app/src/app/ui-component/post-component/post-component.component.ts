@@ -9,7 +9,7 @@ import { UiComponentService } from './../ui-component.service'
 export class PostComponent implements OnInit {
 
   @Input() cardId: any;
-  public content: any;
+  public contentToShow: any;
   constructor( private uiService: UiComponentService ) { }
 
   ngOnInit() {
@@ -18,10 +18,19 @@ export class PostComponent implements OnInit {
 
   getDataPost(){
     this.uiService.getCardsDataById( this.cardId, data => {
-      this.content = data;
+      this.getMainContent( data );
     }, error => {
-      this.content = [];
+      this.contentToShow = {};
       console.log('err',error)
     });
+  }
+
+  getMainContent( params ){
+    this.contentToShow = {
+      'graphData' : params[0].cardGraph,
+      'title' : params[0].cardPost.postTitle,
+      'image' : params[0].cardPost.postImageUrl,
+      'description' : params[0].cardPost.postDescription
+    }
   }
 }

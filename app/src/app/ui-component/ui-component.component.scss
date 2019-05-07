@@ -44,6 +44,7 @@
                 flex-wrap: wrap;
                 flex: 25%;
                 justify-content: space-around;
+                height: 100%;
                 .hidden-card{
                     display: none;
                 }
@@ -67,6 +68,23 @@
                         padding: 33px 31px;
                         text-align: left;
                     }
+                }
+            }
+            .post-component{
+                height: 100%;
+                .back-button{
+                    position: absolute;
+                    top: 13px;
+                    width: 109px;
+                    height: 36px;
+                    font-size: 18px;
+                    font-weight: 300;
+                    font-style: normal;
+                    font-stretch: normal;
+                    line-height: 2;
+                    letter-spacing: 0.2px;
+                    background-color: black;
+                    color: white;
                 }
             }
         }
