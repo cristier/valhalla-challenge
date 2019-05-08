@@ -1,5 +1,9 @@
 <div id="search-container">
     <mat-form-field class="mat-form-container">
-        <input matInput placeholder="Search in cards">
+        <input matInput 
+               [(ngModel)]="searchInCards" 
+               type="search" 
+               (ngModelChange)="searchInCardsChange.emit(searchInCards)"
+               placeholder="Search in cards">
     </mat-form-field>
 </div>

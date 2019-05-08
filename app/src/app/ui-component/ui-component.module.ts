@@ -17,7 +17,10 @@ import { PostComponent } from './post-component/post-component.component';
 import { GraphComponent } from './graph-component/graph-component.component';
 
 //Services
-import { UiComponentService } from './ui-component.service'
+import { UiComponentService } from './ui-component.service';
+
+//Pipes
+import { FilterPipe } from './filter.pipe'
 
 @NgModule({
   declarations: [
@@ -26,7 +29,8 @@ import { UiComponentService } from './ui-component.service'
     SearchComponent,
     FilterComponent,
     PostComponent,
-    GraphComponent
+    GraphComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

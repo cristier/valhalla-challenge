@@ -5,11 +5,16 @@
         display: flex;
         flex-direction: column;
         .image-container{
-            height: 30%;
+            height: 250px;
             width: 100%;
+            img{
+                width: 100%;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
         }
         .content-card{
-            height: 70%;
+            height: 100%;
             padding: 50px;
             display: flex;
             align-items: stretch;

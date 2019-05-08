@@ -15,7 +15,7 @@
       <mat-drawer #drawer [opened]="true" [mode]="'push'" class="sidenav-container">
           <dev-component></dev-component>
           <div *ngIf="pageToShow === 'dashboard'">
-              <search-component></search-component>
+              <search-component [(searchInCards)]="searchInCards"></search-component>
               <filter-component (filterValue)="valueSelected($event)"></filter-component>
           </div>
       </mat-drawer>
@@ -25,9 +25,8 @@
         <div *ngIf="pageToShow === 'dashboard'">
           <h2> Languages & Technologies </h2>
           <div class="flex-cards">
-            <div *ngFor="let card of cardsContent">
-              <mat-card class="card-content"
-                        [ngClass]="{'hidden-card': filterValue && filterValue !== card.cardTechnology[0]}">
+            <div *ngFor="let card of filterContent | filter: searchInCards">
+              <mat-card class="card-content">
                 <div class="card-image" (click)="switchToPost(card.cardId)">
                   <img src="{{card.cardImageUrl}}">
                 </div>

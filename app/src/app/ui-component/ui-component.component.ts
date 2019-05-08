@@ -9,7 +9,7 @@ import { UiComponentService } from './ui-component.service'
 export class UiComponent implements OnInit {
 
   public cardsContent: any[] = [];
-  public filterValue: any;
+  public filterContent: any[] = [];
   public pageToShow: string = 'dashboard';
   public cardId: any;
   constructor(private cardsDataService: UiComponentService) { }
@@ -19,7 +19,12 @@ export class UiComponent implements OnInit {
   }
 
   valueSelected( option ){
-    this.filterValue = option;
+    var arrayFiltered = [];
+    this.cardsContent.forEach(card => {
+      let cardFiltered = card.cardTechnology.filter( tech => tech === option );
+      if ( cardFiltered.length > 0 ) arrayFiltered.push( card );
+    });
+    this.filterContent = arrayFiltered;
   }
 
   switchToPost( cardId ){
@@ -29,11 +34,13 @@ export class UiComponent implements OnInit {
 
   switchToDashboard(){
     this.pageToShow = 'dashboard';
+    this.filterContent = this.cardsContent;
   }
 
   getData(){
     this.cardsDataService.getCardsData( data => {
       this.cardsContent = data;
+      this.filterContent = data;
     }, error => {
       this.cardsContent = [];
       console.log('err',error)
