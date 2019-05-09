@@ -1,7 +1,8 @@
 <div id="post-container" class="container">
     <div class="content-container">
-        <div class="image-container row">
-            <img src="{{contentToShow.image}}">
+        <div class="image-container row"
+             [ngStyle]="{ 'background-image': 'url(' + contentToShow.image + ')'}">
+            <h1>{{contentToShow.title}}</h1>
         </div>
         <div class="content-card row">
             <div class="description-container">
