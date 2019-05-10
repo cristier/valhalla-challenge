@@ -2,6 +2,7 @@
 Project build with Angular 7 and Node Js and other tools like: Angular Material, Highcharts, ExpressJS.
 
 ## Getting Started
+You'll need previously have node in order to run the project.
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. In order to run this application in your computer you should follow the next steps:
 
 1) run npm install in app and mock-server
