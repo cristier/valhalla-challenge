@@ -41,7 +41,7 @@ export class UiComponentService {
 			  width:450,
 			  height:450,
 			},
-			colors: ['#50B432', '#ED561B', '#DDDF00', '#24CBE5', '#64E572', '#FF9655', '#FFF263', '#6AF9C4'],
+			colors: [],
 			title: {
 			  text: '',
 			  margin: 0,

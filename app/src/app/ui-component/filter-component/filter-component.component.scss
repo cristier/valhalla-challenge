@@ -1,5 +1,6 @@
 #filter-container{
     padding: 30px;
+    color: white;
     .radio-group-container{
         width: 100%;
         display: flex;
@@ -8,5 +9,11 @@
     }
     .radio-button-container{
         margin-bottom: 15px;
+    }
+    ::ng-deep .mat-radio-outer-circle{
+        border-color:white;
+    }
+    ::ng-deep .mat-radio-inner-circle{
+        background-color:white;
     }
 }

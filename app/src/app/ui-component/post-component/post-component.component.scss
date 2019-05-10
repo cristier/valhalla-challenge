@@ -19,6 +19,13 @@
             justify-content: center;
             align-items: center;
             color: white;
+            h1{
+                background-color: #2E2E2E;
+                color: white;
+                box-shadow: 2px 2px 4px 0 black;
+                opacity: 0.7;
+                padding: 10px;
+            }
         }
         .content-card{
             height: 100%;
