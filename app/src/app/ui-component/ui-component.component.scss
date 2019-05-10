@@ -89,5 +89,11 @@
                 }
             }
         }
+        @media (max-width:700px) {
+            .sidenav-container{
+                //To display in devices
+                width: inherit !important;
+            }
+        }
     }  
 }

@@ -42,4 +42,12 @@
             }
         }
     }
+    @media (max-width:700px) {
+        .content-card{
+            flex-wrap: wrap-reverse;
+            .description-container{
+                padding: inherit;
+            }
+        }
+    }
 }

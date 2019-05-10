@@ -86,6 +86,6 @@ export class UiComponentService {
 			credits: {
 			  enabled: false
 			}
-		  };
+		};
 	}
 }
