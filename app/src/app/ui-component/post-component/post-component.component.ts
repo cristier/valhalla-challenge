@@ -10,6 +10,7 @@ export class PostComponent implements OnInit {
 
   @Input() cardId: any;
   public contentToShow: any;
+  public pieChartConfig: any;
   constructor( private uiService: UiComponentService ) { }
 
   ngOnInit() {
@@ -32,5 +33,9 @@ export class PostComponent implements OnInit {
       'image' : params[0].cardPost.postImageUrl,
       'description' : params[0].cardPost.postDescription
     }
+    let updateConfig = Object.assign({}, this.uiService.getPieConfig());
+    this.pieChartConfig = updateConfig;
+    this.pieChartConfig.title.text = this.contentToShow.title;
+    this.pieChartConfig.series[0].data = this.contentToShow.graphData.data;
   }
 }

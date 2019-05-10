@@ -30,7 +30,62 @@ export class UiComponentService {
 		);
 	}
 
-	public drawChart( element, options ) {
-		Highcharts.chart(element, options);
+	public getPieConfig(){
+		return {
+			chart: {
+			  plotBackgroundColor: null,
+			  plotBorderWidth: null,
+			  plotShadow: false,
+			  backgroundColor:'transparent',
+			  type: 'pie',
+			  width:450,
+			  height:450,
+			},
+			colors: ['#50B432', '#ED561B', '#DDDF00', '#24CBE5', '#64E572', '#FF9655', '#FFF263', '#6AF9C4'],
+			title: {
+			  text: '',
+			  margin: 0,
+			  y:0,
+			  x:0,
+			  useHTML: true,
+			  align: 'center',
+			  verticalAlign: 'middle'
+			},
+			plotOptions: {
+			  pie: {
+				  point: {
+					  events: {
+						  mouseOver: function(event) {
+							  let highChartCntEl = this.series.chart.container;
+							  this.changeChartTitle(highChartCntEl, this);
+						  }
+					  }
+				  },
+				  shadow: false,
+				  borderColor: 'rgba(0,0,0,0.1)',
+				  borderWidth: '0',
+				  center: ['50%', '50%'],
+				  cursor: 'pointer',
+				  showInLegend: false,
+				  dataLabels: {
+					enabled: false,
+					formatter: function() {
+						return '';
+					}
+				}
+			  }
+			},
+			legend: {
+			  enabled: false,
+			},
+			series: [{
+			  size: '70%',
+			  innerSize: '60%',
+			  data: []
+			}],
+			credits: {
+			  enabled: false
+			}
+		  };
 	}
 }
